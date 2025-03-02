@@ -1,16 +1,17 @@
 name: Build and Deploy WebAssembly
+
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
-permissions:
-  contents: write
+      - master
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -34,7 +35,7 @@ jobs:
         run: |
           mkdir -p build
           cd build
-          emcmake cmake ..
+          emcmake cmake .. -DPLATFORM=Web
 
       - name: Build WebAssembly
         run: |
@@ -42,9 +43,9 @@ jobs:
           emmake make -j
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          folder: build
-          clean: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: build
+          CLEAN: true
