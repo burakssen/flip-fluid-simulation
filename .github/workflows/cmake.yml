@@ -42,6 +42,9 @@ jobs:
           cd build
           make -j
 
+      - name: List current directory structure before deployment
+        run: find . -type f | sort
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
