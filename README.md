@@ -9,11 +9,6 @@ This project is a C++ rewrite of the [FLIP-Fluid simulation](https://github.com/
 - Supports various boundary conditions
 - Optimized for real-time simulations
 
-<video width="640" height="360" controls>
-  <source src="./recording.mov" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
 ## Installation & Usage
 
 1. Clone the repository:
