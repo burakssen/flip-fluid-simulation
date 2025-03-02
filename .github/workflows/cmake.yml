@@ -40,10 +40,7 @@ jobs:
       - name: Build WebAssembly
         run: |
           cd build
-          make -j
-
-      - name: List current directory structure before deployment
-        run: find . -type f | sort
+          emmake make -j
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
