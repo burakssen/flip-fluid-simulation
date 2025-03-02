@@ -7,6 +7,10 @@
 #include <memory>
 #include <cmath>
 
+#ifdef __EMSCRIPTEN__
+#include <emscripten/emscripten.h>
+#endif
+
 // Scene configuration
 struct FluidScene
 {
@@ -57,7 +61,7 @@ void DrawScene();
 void SimulateStep();
 void HandleInput();
 void RenderFrame();
-
+void MainLoop();
 int main()
 {
     InitWindow(screenWidth, screenHeight, "FLIP Fluid Simulation");
@@ -74,24 +78,37 @@ int main()
 
     InitializeScene(simWidth, simHeight);
 
-    // Load shaders
-    particleShader = LoadShader("../shaders/point.vs", "../shaders/point.fs");
+// Load shaders
+#ifdef __EMSCRIPTEN__
+    particleShader = LoadShader("../shaders/web/point.vs", "../shaders/web/point.fs");
+#else
+    particleShader = LoadShader("../shaders/desktop/point.vs", "../shaders/desktop/point.fs");
+#endif
     particlePointSizeLoc = GetShaderLocation(particleShader, "pointSize");
     domainSizeLoc = GetShaderLocation(particleShader, "domainSize");
     drawDiskLoc = GetShaderLocation(particleShader, "drawDisk");
 
+#ifdef __EMSCRIPTEN__
+    emscripten_set_main_loop(MainLoop, 0, 1);
+#else
     // Main game loop
     while (!WindowShouldClose())
     {
-        HandleInput();
-        if (!scene.paused)
-            SimulateStep();
-        RenderFrame();
+        MainLoop();
     }
+#endif
 
     UnloadShader(particleShader);
     CloseWindow();
     return 0;
+}
+
+void MainLoop()
+{
+    HandleInput();
+    if (!scene.paused)
+        SimulateStep();
+    RenderFrame();
 }
 
 void HandleInput()
@@ -148,6 +165,7 @@ void RenderFrame()
 
     // UI text
     DrawText(scene.paused ? "PAUSED (Press P to resume)" : "Running (Press P to pause)", 10, 10, 20, WHITE);
+    DrawText(TextFormat("Number of particles: %d", scene.fluid->numParticles), 10, 40, 20, WHITE);
     DrawFPS(screenWidth - 100, 10);
 
     EndDrawing();
