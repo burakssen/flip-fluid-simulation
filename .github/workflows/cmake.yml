@@ -35,12 +35,12 @@ jobs:
         run: |
           mkdir -p build
           cd build
-          emcmake cmake .. -DPLATFORM=Web
+          emcmake cmake ..
 
       - name: Build WebAssembly
         run: |
           cd build
-          emmake make -j
+          make -j
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
