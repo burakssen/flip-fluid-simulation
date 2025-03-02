@@ -1,0 +1,56 @@
+[
+{
+  "directory": "/home/runner/work/flip-fluid-simulation/flip-fluid-simulation/build",
+  "command": "/home/runner/work/_temp/e9a4c079-5e80-4e83-a34b-a16cf8ab72b9/emsdk-main/upstream/emscripten/em++ -DGRAPHICS_API_OPENGL_ES2 -DPLATFORM_WEB @CMakeFiles/flip.dir/includes_CXX.rsp -std=gnu++23 -o CMakeFiles/flip.dir/src/FlipFluid.cpp.o -c /home/runner/work/flip-fluid-simulation/flip-fluid-simulation/src/FlipFluid.cpp",
+  "file": "/home/runner/work/flip-fluid-simulation/flip-fluid-simulation/src/FlipFluid.cpp",
+  "output": "CMakeFiles/flip.dir/src/FlipFluid.cpp.o"
+},
+{
+  "directory": "/home/runner/work/flip-fluid-simulation/flip-fluid-simulation/build",
+  "command": "/home/runner/work/_temp/e9a4c079-5e80-4e83-a34b-a16cf8ab72b9/emsdk-main/upstream/emscripten/em++ -DGRAPHICS_API_OPENGL_ES2 -DPLATFORM_WEB @CMakeFiles/flip.dir/includes_CXX.rsp -std=gnu++23 -o CMakeFiles/flip.dir/src/main.cpp.o -c /home/runner/work/flip-fluid-simulation/flip-fluid-simulation/src/main.cpp",
+  "file": "/home/runner/work/flip-fluid-simulation/flip-fluid-simulation/src/main.cpp",
+  "output": "CMakeFiles/flip.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/runner/work/flip-fluid-simulation/flip-fluid-simulation/build/vendor/raylib/raylib",
+  "command": "/home/runner/work/_temp/e9a4c079-5e80-4e83-a34b-a16cf8ab72b9/emsdk-main/upstream/emscripten/emcc -DGRAPHICS_API_OPENGL_ES2 -DPLATFORM_WEB @CMakeFiles/raylib.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -std=gnu99 -o CMakeFiles/raylib.dir/raudio.c.o -c /home/runner/work/flip-fluid-simulation/flip-fluid-simulation/vendor/raylib/src/raudio.c",
+  "file": "/home/runner/work/flip-fluid-simulation/flip-fluid-simulation/vendor/raylib/src/raudio.c",
+  "output": "vendor/raylib/raylib/CMakeFiles/raylib.dir/raudio.c.o"
+},
+{
+  "directory": "/home/runner/work/flip-fluid-simulation/flip-fluid-simulation/build/vendor/raylib/raylib",
+  "command": "/home/runner/work/_temp/e9a4c079-5e80-4e83-a34b-a16cf8ab72b9/emsdk-main/upstream/emscripten/emcc -DGRAPHICS_API_OPENGL_ES2 -DPLATFORM_WEB @CMakeFiles/raylib.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -std=gnu99 -o CMakeFiles/raylib.dir/rcore.c.o -c /home/runner/work/flip-fluid-simulation/flip-fluid-simulation/vendor/raylib/src/rcore.c",
+  "file": "/home/runner/work/flip-fluid-simulation/flip-fluid-simulation/vendor/raylib/src/rcore.c",
+  "output": "vendor/raylib/raylib/CMakeFiles/raylib.dir/rcore.c.o"
+},
+{
+  "directory": "/home/runner/work/flip-fluid-simulation/flip-fluid-simulation/build/vendor/raylib/raylib",
+  "command": "/home/runner/work/_temp/e9a4c079-5e80-4e83-a34b-a16cf8ab72b9/emsdk-main/upstream/emscripten/emcc -DGRAPHICS_API_OPENGL_ES2 -DPLATFORM_WEB @CMakeFiles/raylib.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -std=gnu99 -o CMakeFiles/raylib.dir/rmodels.c.o -c /home/runner/work/flip-fluid-simulation/flip-fluid-simulation/vendor/raylib/src/rmodels.c",
+  "file": "/home/runner/work/flip-fluid-simulation/flip-fluid-simulation/vendor/raylib/src/rmodels.c",
+  "output": "vendor/raylib/raylib/CMakeFiles/raylib.dir/rmodels.c.o"
+},
+{
+  "directory": "/home/runner/work/flip-fluid-simulation/flip-fluid-simulation/build/vendor/raylib/raylib",
+  "command": "/home/runner/work/_temp/e9a4c079-5e80-4e83-a34b-a16cf8ab72b9/emsdk-main/upstream/emscripten/emcc -DGRAPHICS_API_OPENGL_ES2 -DPLATFORM_WEB @CMakeFiles/raylib.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -std=gnu99 -o CMakeFiles/raylib.dir/rshapes.c.o -c /home/runner/work/flip-fluid-simulation/flip-fluid-simulation/vendor/raylib/src/rshapes.c",
+  "file": "/home/runner/work/flip-fluid-simulation/flip-fluid-simulation/vendor/raylib/src/rshapes.c",
+  "output": "vendor/raylib/raylib/CMakeFiles/raylib.dir/rshapes.c.o"
+},
+{
+  "directory": "/home/runner/work/flip-fluid-simulation/flip-fluid-simulation/build/vendor/raylib/raylib",
+  "command": "/home/runner/work/_temp/e9a4c079-5e80-4e83-a34b-a16cf8ab72b9/emsdk-main/upstream/emscripten/emcc -DGRAPHICS_API_OPENGL_ES2 -DPLATFORM_WEB @CMakeFiles/raylib.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -std=gnu99 -o CMakeFiles/raylib.dir/rtext.c.o -c /home/runner/work/flip-fluid-simulation/flip-fluid-simulation/vendor/raylib/src/rtext.c",
+  "file": "/home/runner/work/flip-fluid-simulation/flip-fluid-simulation/vendor/raylib/src/rtext.c",
+  "output": "vendor/raylib/raylib/CMakeFiles/raylib.dir/rtext.c.o"
+},
+{
+  "directory": "/home/runner/work/flip-fluid-simulation/flip-fluid-simulation/build/vendor/raylib/raylib",
+  "command": "/home/runner/work/_temp/e9a4c079-5e80-4e83-a34b-a16cf8ab72b9/emsdk-main/upstream/emscripten/emcc -DGRAPHICS_API_OPENGL_ES2 -DPLATFORM_WEB @CMakeFiles/raylib.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -std=gnu99 -o CMakeFiles/raylib.dir/rtextures.c.o -c /home/runner/work/flip-fluid-simulation/flip-fluid-simulation/vendor/raylib/src/rtextures.c",
+  "file": "/home/runner/work/flip-fluid-simulation/flip-fluid-simulation/vendor/raylib/src/rtextures.c",
+  "output": "vendor/raylib/raylib/CMakeFiles/raylib.dir/rtextures.c.o"
+},
+{
+  "directory": "/home/runner/work/flip-fluid-simulation/flip-fluid-simulation/build/vendor/raylib/raylib",
+  "command": "/home/runner/work/_temp/e9a4c079-5e80-4e83-a34b-a16cf8ab72b9/emsdk-main/upstream/emscripten/emcc -DGRAPHICS_API_OPENGL_ES2 -DPLATFORM_WEB @CMakeFiles/raylib.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -std=gnu99 -o CMakeFiles/raylib.dir/utils.c.o -c /home/runner/work/flip-fluid-simulation/flip-fluid-simulation/vendor/raylib/src/utils.c",
+  "file": "/home/runner/work/flip-fluid-simulation/flip-fluid-simulation/vendor/raylib/src/utils.c",
+  "output": "vendor/raylib/raylib/CMakeFiles/raylib.dir/utils.c.o"
+}
+]
