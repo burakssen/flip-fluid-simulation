@@ -37,16 +37,7 @@ jobs:
       - name: Build WebAssembly
         run: |
           cd build
-          make -j
-          ls -la
-
-      - name: Copy additional assets
-        run: |
-          cp index.html build/
-          cp -r assets build/ || echo "No assets directory found"
-          cp -r shaders build/ || echo "No shaders directory found"
-          echo "Build directory contents:"
-          ls -la build/
+          emmake make -j
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
