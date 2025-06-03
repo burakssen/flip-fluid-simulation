@@ -47,6 +47,7 @@ float cScale;
 bool mouseDown = false;
 Vector2 lastMousePos = {0};
 Camera2D camera = {0};
+RenderTexture2D particleTarget;
 
 // Shader variables
 Shader particleShader;
@@ -78,6 +79,8 @@ int main()
 
     InitializeScene(simWidth, simHeight);
 
+    particleTarget = LoadRenderTexture((int)screenWidth, (int)screenHeight);
+
 // Load shaders
 #ifdef __EMSCRIPTEN__
     particleShader = LoadShader("../shaders/web/point.vs", "../shaders/web/point.fs");
@@ -97,6 +100,8 @@ int main()
         MainLoop();
     }
 #endif
+
+    UnloadRenderTexture(particleTarget);
 
     UnloadShader(particleShader);
     CloseWindow();
@@ -251,15 +256,15 @@ void SimulateStep()
         scene.obstacleVelY);
     scene.frameNr++;
 }
-
 void DrawScene()
 {
-    // Render particles using the shader and RL_LINES
     if (scene.showParticles)
     {
+        BeginTextureMode(particleTarget); // Offscreen rendering
+        ClearBackground(BLANK);           // Transparent clear
+
         BeginShaderMode(particleShader);
 
-        // Pass uniforms to shader
         float pointSize = ((2.0f * scene.fluid->particleRadius) / (screenWidth / cScale)) * screenWidth;
         SetShaderValue(particleShader, particlePointSizeLoc, &pointSize, SHADER_UNIFORM_FLOAT);
 
@@ -273,7 +278,6 @@ void DrawScene()
         const auto &particleColor = scene.fluid->particleColor;
         int numParticles = scene.fluid->numParticles;
 
-        // Draw particles as very short lines (point simulation)
         rlBegin(RL_LINES);
         for (int i = 0; i < numParticles; i++)
         {
@@ -295,7 +299,15 @@ void DrawScene()
         rlEnd();
 
         EndShaderMode();
+        EndTextureMode(); // Done rendering particles
     }
+
+    // Draw render texture to screen
+    DrawTextureRec(
+        particleTarget.texture,
+        Rectangle{0, 0, (float)particleTarget.texture.width, -(float)particleTarget.texture.height},
+        Vector2{0, 0},
+        WHITE);
 
     // Draw the obstacle
     if (scene.showObstacle)
